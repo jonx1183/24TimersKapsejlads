@@ -2,6 +2,7 @@ package com.example._3sem24timersbackend.Service;
 
 import com.example._3sem24timersbackend.Model.BoatModel;
 import com.example._3sem24timersbackend.Repository.BoatRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +18,11 @@ public class BoatService {
     return boatRepository.findAll();
   }
 
-  public void createBoat(BoatModel boat){
-    boatRepository.save(boat);
+  public BoatModel createBoat(BoatModel boat){
+    return boatRepository.save(boat);
   }
 
-  public void deleteBoatById(int id){
+  public void deleteBoatById(Integer id){
     boatRepository.deleteById(id);
   }
 }
