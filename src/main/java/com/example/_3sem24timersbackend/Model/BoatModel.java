@@ -27,4 +27,6 @@ public BoatModel(int boatId, String boatType){
   this.boatId = boatId;
   this.boatType = boatType;
 }
+
+
 }
