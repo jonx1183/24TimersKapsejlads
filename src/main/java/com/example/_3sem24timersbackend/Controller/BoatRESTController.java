@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://localhost:63342")
 public class BoatRESTController {
   @Autowired
   private BoatService boatService;
@@ -26,6 +26,15 @@ public class BoatRESTController {
   public ResponseEntity<BoatModel> createBoat(@RequestBody BoatModel boat){
     boatService.createBoat(boat);
     return new ResponseEntity<>(HttpStatus.CREATED);
+  }
+
+  @PutMapping("/updateBoat/{boatId}")
+  public ResponseEntity<BoatModel>updateBoat(@PathVariable("boatId") int boatId,
+                                             @RequestBody BoatModel boat){
+    boat.setBoatId(boatId);
+    BoatModel updatedBoat = boatService.updateBoatModel(boat);
+    return new ResponseEntity<>(updatedBoat, HttpStatus.OK);
+
   }
 
   @DeleteMapping("/DeleteBoat")

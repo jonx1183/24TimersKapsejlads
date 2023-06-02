@@ -22,6 +22,14 @@ public class BoatService {
     return boatRepository.save(boat);
   }
 
+  public BoatModel updateBoatModel(BoatModel boatModel){
+    BoatModel existingBoatModel = boatRepository.findById(boatModel.getBoatId()).get();
+    existingBoatModel.setBoatId(boatModel.getBoatId());
+    existingBoatModel.setBoatType(boatModel.getBoatType());
+    BoatModel updatedBoatModel = boatRepository.save(existingBoatModel);
+    return updatedBoatModel;
+  }
+
   public void deleteBoatById(Integer id){
     boatRepository.deleteById(id);
   }
