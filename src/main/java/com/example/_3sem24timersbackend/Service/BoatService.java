@@ -2,7 +2,6 @@ package com.example._3sem24timersbackend.Service;
 
 import com.example._3sem24timersbackend.Model.BoatModel;
 import com.example._3sem24timersbackend.Repository.BoatRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
